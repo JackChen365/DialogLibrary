@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PopupDecorView">
+        <attr name="layout_align" format="enum">
+            <enum name="left" value="0x01"/>
+            <enum name="top" value="0x02"/>
+            <enum name="right" value="0x03"/>
+            <enum name="bottom" value="0x04"/>
+        </attr>
+    </declare-styleable>
+</resources>

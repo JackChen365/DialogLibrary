@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DialogCompat</string>
+    <string name="title_activity_progress">ProgressActivity</string>
+    <string name="title_activity_popup_panel">PopupPanelActivity</string>
+</resources>

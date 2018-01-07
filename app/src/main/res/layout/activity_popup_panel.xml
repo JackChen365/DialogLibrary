@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cz.widget.linearlayout.TabLinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:tll_tabImage="@color/colorPrimary"
+        app:tll_tabHeight="2dp"
+        app:lc_startDividerPadding="12dp"
+        app:lc_endDividerPadding="12dp"
+        app:lc_itemDividerDrawable="@color/colorPrimary"
+        app:lc_dividerGravity="item_divider"
+        app:lc_dividerSize="2dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:textColor="@drawable/text2primary_select_text"
+            android:textSize="16sp"
+            android:gravity="center"
+            app:layout_choiceMode="radio_reverse"
+            android:text="Menu1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:gravity="center"
+            android:textColor="@drawable/text2primary_select_text"
+            android:textSize="16sp"
+            app:layout_choiceMode="radio_reverse"
+            android:text="Menu2"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:gravity="center"
+            android:textColor="@drawable/text2primary_select_text"
+            android:textSize="16sp"
+            app:layout_choiceMode="radio_reverse"
+            android:text="Menu3"/>
+
+    </cz.widget.linearlayout.TabLinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/divider"/>
+
+    <cz.dialogcompat.library.depend.widget.PopupLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/contentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_centerInParent="true"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="Content"/>
+
+        <!--面板1-->
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_align="top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="80dp"
+                android:paddingBottom="80dp"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@color/colorAccent"
+                android:text="Frame1"/>
+        </FrameLayout>
+
+        <!--面板2-->
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_align="left">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="100dp"
+                android:paddingRight="100dp"
+                android:gravity="center"
+                android:textSize="24dp"
+                android:textColor="@android:color/white"
+                android:background="@color/red"
+                android:text="Frame2"/>
+        </FrameLayout>
+
+        <!--面板3-->
+        <FrameLayout
+            android:id="@+id/frame3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_align="bottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="120dp"
+                android:paddingBottom="120dp"
+                android:gravity="center"
+                android:textSize="24dp"
+                android:textColor="@android:color/white"
+                android:background="@color/green"
+                android:text="Frame3"/>
+        </FrameLayout>
+
+    </cz.dialogcompat.library.depend.widget.PopupLayout>
+
+</LinearLayout>
