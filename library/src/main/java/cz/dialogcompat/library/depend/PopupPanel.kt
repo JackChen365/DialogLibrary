@@ -13,7 +13,7 @@ import cz.dialogcompat.library.depend.widget.PopupLayout
  * 为简休屏幕内大量的自定义面板
  * 提供基本4种方位,上下左右,默认向下
  * 提供基本的面板组控件
- * todo 提供面板之间的显示关系(如互斥,直接显示)
+ * 提供面板之间的互斥关系
  */
 class PopupPanel {
     companion object {
@@ -38,13 +38,13 @@ class PopupPanel {
         val frameLayout=builder.layout
         if(null!=builder.layout){
             //初始化view
-            frame=PopupFrame(frameLayout)
+            frame=PopupFrame(context)
+            frame.setContentView(frameLayout)
         } else if(-1!=builder.layoutRes){
             val inflateView = LayoutInflater.from(context).inflate(builder.layoutRes, layout, false)
-            frame=PopupFrame(inflateView)
+            frame=PopupFrame(context)
+            frame.setContentView(inflateView)
         }
-        //设置点击外围隐藏当前桢
-        layout.setCanceledOnTouchOutside(builder.cancelOutSide)
         //添加依赖关系
         if(null!=frame){
             val view=frame.view
@@ -52,14 +52,16 @@ class PopupPanel {
                 LEFT,RIGHT->{
                     val horizontalLayoutParams=PopupLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.MATCH_PARENT)
                     horizontalLayoutParams.layoutAlign=builder.align
-                    view.layoutParams=horizontalLayoutParams
+                    view?.layoutParams=horizontalLayoutParams
                 }
                 TOP,BOTTOM->{
                     val verticalLayoutParams=PopupLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
                     verticalLayoutParams.layoutAlign=builder.align
-                    view.layoutParams=verticalLayoutParams
+                    view?.layoutParams=verticalLayoutParams
                 }
             }
+            //设置转换器
+            frame.setTransition(builder.transition)
             //添加当前桢
             layout.addFrame(frame)
         }
@@ -81,66 +83,30 @@ class PopupPanel {
     }
 
     /**
-     * 显示当前面板
+     * 显示所有面板
      */
-    fun show(@IdRes id:Int){
-        val frameItem=layout.getFrame(id)
-        if(null!=frameItem){
-            val transition = frameItem.getTransition()
-            if(null!=transition&&!transition.isShowing(frameItem.view)){
-                val enterAnimator = transition.enterAnimator(frameItem.view)
-                enterAnimator.start()
-                //回调桢面板显示
-                frameItem.onFrameShown(layout)
-            }
-        }
-    }
+    fun show()=layout.show()
+
+    /**
+     * 显示指定面板
+     */
+    fun show(@IdRes id:Int)=layout.show(id)
 
     /**
      * 隐藏显示所有面板
      */
-    fun dismiss(){
-        //隐藏显示所有面板
-        val frames = layout.getFrames()
-        for(i in 0 until frames.size()){
-            val frameItem=frames.valueAt(i)
-            val transition = frameItem.getTransition()
-            if(null!=transition&&transition.isShowing(frameItem.view)){
-                val exitAnimator = transition.exitAnimator(frameItem.view)
-                exitAnimator.start()
-                //回调桢面板显示
-                frameItem.onFrameClosed(layout)
-            }
-        }
-    }
+    fun dismiss()=layout.dismiss()
 
-    fun dismiss(@IdRes id:Int=View.NO_ID){
-        //隐藏指定id的面板桢
-        val frameItem=layout.getFrame(id)
-        if(null!=frameItem){
-            val transition = frameItem.getTransition()
-            if(null!=transition){
-                val exitAnimator = transition.exitAnimator(frameItem.view)
-                exitAnimator.start()
-                //回调桢面板显示
-                frameItem.onFrameClosed(layout)
-            }
-        }
-    }
+    fun dismiss(@IdRes id:Int)=layout.dismiss(id)
 
-    fun setOnDismissListener(listener:OnDismissListener){
+    fun setOnDismissListener(listener: PopupLayout.OnDismissListener){
         this.layout.setOnDismissListener(listener)
-    }
-
-    interface OnDismissListener {
-        fun onDismiss()
     }
 
     class Builder(val layout:PopupLayout){
         var align= NONE
         var view:View?=null
         var layoutRes:Int=-1
-        var cancelOutSide=false
         var frame: PopupFrame?=null
         var transition: PopupTransition= TopPopupTransition()
 
@@ -156,11 +122,6 @@ class PopupPanel {
 
         fun setFrame(frame: PopupFrame):Builder{
             this.frame=frame
-            return this
-        }
-
-        fun setCanceledOnTouchOutside(cancel:Boolean):Builder{
-            this.cancelOutSide=cancel
             return this
         }
 

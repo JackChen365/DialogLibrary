@@ -11,15 +11,11 @@ import android.view.animation.LinearInterpolator
 class LeftPopupTransition: PopupTransition {
 
     override fun enterAnimator(target: View): Animator {
-        val animator= ObjectAnimator.ofFloat(target, "translationX", target.width * 1f)
-        animator.interpolator= LinearInterpolator()
-        return animator
+        return ObjectAnimator.ofFloat(target, "translationX", target.width * 1f)
     }
 
     override fun exitAnimator(target: View): Animator {
-        val animator= ObjectAnimator.ofFloat(target, "translationX", 0f)
-        animator.interpolator= LinearInterpolator()
-        return animator
+        return ObjectAnimator.ofFloat(target, "translationX", 0f)
     }
 
     override fun isShowing(target: View)=0f!=target.translationX

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_align="bottom">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="120dp"
+        android:paddingBottom="120dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textColor="@android:color/white"
+        android:background="@color/green"
+        android:text="Frame3"/>
+
+</FrameLayout>

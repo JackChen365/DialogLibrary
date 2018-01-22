@@ -1,11 +1,8 @@
 package cz.dialogcompat.library.widget
 
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.view.KeyEvent
-import android.view.MotionEvent
 import android.view.WindowManager
 import android.widget.FrameLayout
 
@@ -17,15 +14,41 @@ import android.widget.FrameLayout
 class WindowLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : FrameLayout(context, attrs, defStyleAttr) {
     //windowManager
     private val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-    private val listenerItems= mutableListOf<OnBackPressListener>()
+    private var listener:OnBackPressListener?=null
+    private var isAttachToWindow=false
     constructor(context: Context, attrs: AttributeSet?):this(context,attrs,0)
     constructor(context: Context):this(context,null,0)
 
-    init {
-//        alpha=0f
-        setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    /**
+     * 装载入窗体
+     */
+    fun attachedToWindow(){
+        if(!isAttachToWindow){
+            isAttachToWindow=true
+            val layoutParams = WindowManager.LayoutParams()
+            //使浮层没有大小
+            layoutParams.width=0
+            layoutParams.height=0
+            //设置不可触摸,使事件往其他Window传递
+            layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+            windowManager.addView(this,layoutParams)
+        }
     }
 
+    /**
+     * 装载入窗体
+     */
+    fun detachedFromWindow(){
+        if(isAttachToWindow){
+            isAttachToWindow=false
+            windowManager.removeView(this)
+        }
+    }
+
+
+    /**
+     * 本方法在常规控件体内,是不生效的.只有被放入WindowManager之后,才会生效
+     */
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         if (event.keyCode == KeyEvent.KEYCODE_BACK) {
             if (keyDispatcherState == null) {
@@ -34,13 +57,14 @@ class WindowLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
             if (event.action == KeyEvent.ACTION_DOWN && event.repeatCount == 0) {
                 val state = keyDispatcherState
                 state?.startTracking(event, this)
-                windowManager.removeView(this)
                 return true
             } else if (event.action == KeyEvent.ACTION_UP) {
                 val state = keyDispatcherState
-                return false
                 if (state != null && state.isTracking(event) && !event.isCanceled) {
-//                    dismissListener?.onDismiss()
+                    if(listener?.onBackPress() == true){
+                        //移除当前window窗体
+                        detachedFromWindow()
+                    }
                     return true
                 }
             }
@@ -50,28 +74,12 @@ class WindowLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : 
         }
     }
 
-    fun getWindowLayoutParams():WindowManager.LayoutParams {
-        val p = WindowManager.LayoutParams()
-        p.width=0
-        p.height=0
-        var curFlags = p.flags
-        p.flags = curFlags and (WindowManager.LayoutParams.FLAG_IGNORE_CHEEK_PRESSES or
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
-                WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH or
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
-                WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM or
-                WindowManager.LayoutParams.FLAG_SPLIT_TOUCH).inv()
-        return p
-    }
-
-    fun addOnBackPressListener(listener:OnBackPressListener){
-        this.listenerItems.add(listener)
+    fun setOnBackPressListener(listener:OnBackPressListener){
+        this.listener=listener
     }
 
     interface OnBackPressListener{
-        fun onBackPress()
+        fun onBackPress():Boolean
     }
-
 
 }
