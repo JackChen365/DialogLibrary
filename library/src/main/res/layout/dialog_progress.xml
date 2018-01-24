@@ -10,7 +10,7 @@
     android:paddingRight="?progressHorizontalPadding"
     android:paddingTop="?progressVerticalPadding"
     android:paddingBottom="?progressVerticalPadding"
-    android:theme="?promptProgress">
+    android:theme="?attr/promptProgress">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -18,7 +18,7 @@
         android:layout_height="?progressIndicatorWidth"
         android:layout_marginRight="?progressIndicatorPadding"
         android:background="@null"
-        android:indeterminateTint="?progressIndeterminateTint"/>
+        android:indeterminateTint="?progressIndeterminateTint" />
 
     <TextView
         android:id="@+id/progressText"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textColor="?progressTextColor"
         android:textSize="?progressTextSize"
-        android:background="@null"/>
+        android:background="@null" />
 
 
 </LinearLayout>

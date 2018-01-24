@@ -99,10 +99,10 @@ class Toast {
             val toast = android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
             val view = View.inflate(context, R.layout.prompt_success_item, null)
-            val tickView = view.findViewById(R.id.iv_icon) as SuccessTickView
+            val tickView = view.findViewById(R.id.successTick) as SuccessTickView
             tickView.visibility = View.VISIBLE
             tickView.startTickAnim()
-            val textView = view.findViewById(R.id.textInfo) as TextView
+            val textView = view.findViewById(R.id.successText) as TextView
             textView.textSize = 13f
             textView.text = text
             toast.view = view

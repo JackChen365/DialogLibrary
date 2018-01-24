@@ -12,7 +12,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <!--<item name="prompt">@style/PromptStyle</item>-->
         <item name="promptCrouton">@style/CroutonStyle</item>
+        <item name="promptProgress">@style/PromptProgress</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -38,10 +40,28 @@
         <item name="android:taskToBackEnterAnimation">@anim/base_stay_orig</item>
         <item name="android:taskToBackExitAnimation">@anim/base_slide_right_out</item>
     </style>
+
+    <style name="PromptStyle">
+        <item name="promptCrouton">@style/CroutonStyle</item>
+        <item name="promptProgress">@style/PromptProgress</item>
+    </style>
+
     <style name="CroutonStyle">
         <item name="croutonPadding">12dp</item>
         <item name="croutonTextSize">16sp</item>
         <item name="croutonTextColor">@color/lightWhite</item>
         <item name="croutonBackgroundColor">@color/colorAccent</item>
+    </style>
+
+    <style name="PromptProgress">
+        <item name="progressBackground">@drawable/toast_background</item>
+        <item name="progressHorizontalPadding">24dp</item>
+        <item name="progressVerticalPadding">24dp</item>
+        <item name="progressIndicatorWidth">36dp</item>
+        <item name="progressIndicatorHeight">36dp</item>
+        <item name="progressIndicatorPadding">12dp</item>
+        <item name="progressIndeterminateTint">@color/colorAccent</item>
+        <item name="progressTextColor">@color/lightWhite</item>
+        <item name="progressTextSize">26sp</item>
     </style>
 </resources>
