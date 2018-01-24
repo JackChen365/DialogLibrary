@@ -1,10 +1,10 @@
-package cz.dialogcompat.library.depend
+package cz.dialogcompat.library.popup
 
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import cz.dialogcompat.library.depend.transition.PopupTransition
-import cz.dialogcompat.library.depend.widget.PopupLayout
+import cz.dialogcompat.library.popup.transition.PopupTransition
+import cz.dialogcompat.library.popup.widget.PopupLayout
 import cz.dialogcompat.library.widget.WindowLayout
 
 /**
@@ -45,7 +45,7 @@ open class PopupFrame(val context:Context){
         windowLayout.attachedToWindow()
         windowLayout.setOnBackPressListener(object :WindowLayout.OnBackPressListener{
             override fun onBackPress(): Boolean {
-                parent.dismiss()
+                parent.dismiss(view?.id?:View.NO_ID)
                 return true
             }
         })

@@ -1,9 +1,8 @@
-package cz.dialogcompat.sample
+package cz.dialogcompat.sample.progress
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import cz.dialogcompat.library.progress.ProgressDialogFragment
+import cz.dialogcompat.sample.R
 import cz.dialogcompat.sample.annotation.ToolBar
 import cz.volunteerunion.ui.ToolBarActivity
 

@@ -1,7 +1,6 @@
 package cz.dialogcompat.library.progress
 
 
-import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.StringRes
@@ -51,7 +50,7 @@ class ProgressDialogFragment : DialogFragment() {
             val progressBar = view.findViewById(R.id.progressBar) as ProgressBar
 //            progressBar.indeterminateDrawable.setColorFilter(Res.getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN)
         }
-        titleView = view.findViewById(R.id.progressMessage) as TextView
+        titleView = view.findViewById(R.id.progressText) as TextView
         titleView?.text = title
     }
 

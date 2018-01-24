@@ -1,4 +1,4 @@
-package cz.dialogcompat.library.depend.widget
+package cz.dialogcompat.library.popup.widget
 
 import android.content.Context
 import android.support.annotation.IdRes
@@ -7,12 +7,12 @@ import android.util.AttributeSet
 import android.util.SparseArray
 import android.view.*
 import cz.dialogcompat.library.R
-import cz.dialogcompat.library.depend.PopupFrame
-import cz.dialogcompat.library.depend.PopupPanel
-import cz.dialogcompat.library.depend.transition.BottomPopupTransition
-import cz.dialogcompat.library.depend.transition.LeftPopupTransition
-import cz.dialogcompat.library.depend.transition.RightPopupTransition
-import cz.dialogcompat.library.depend.transition.TopPopupTransition
+import cz.dialogcompat.library.popup.PopupFrame
+import cz.dialogcompat.library.popup.PopupPanel
+import cz.dialogcompat.library.popup.transition.BottomPopupTransition
+import cz.dialogcompat.library.popup.transition.LeftPopupTransition
+import cz.dialogcompat.library.popup.transition.RightPopupTransition
+import cz.dialogcompat.library.popup.transition.TopPopupTransition
 
 /**
  * Created by cz on 2018/1/6.

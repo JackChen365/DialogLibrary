@@ -68,8 +68,8 @@ class Toast {
     fun customToast(context:Context,text: String, duration: Int = android.widget.Toast.LENGTH_SHORT) {
         frequently(text){
             val layoutInflate = LayoutInflater.from(context)
-            val toastView = layoutInflate.inflate(R.layout.toast_custom, null)
-            val localTextView = toastView.findViewById(R.id.tv_content) as TextView
+            val toastView = layoutInflate.inflate(R.layout.prompt_toast_custom, null)
+            val localTextView = toastView.findViewById(R.id.toastContent) as TextView
             localTextView.text = text
             val toast = android.widget.Toast(context)
             toast.duration = duration
@@ -98,7 +98,7 @@ class Toast {
         frequently(text) {
             val toast = android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
-            val view = View.inflate(context, R.layout.prompt_item, null)
+            val view = View.inflate(context, R.layout.prompt_success_item, null)
             val tickView = view.findViewById(R.id.iv_icon) as SuccessTickView
             tickView.visibility = View.VISIBLE
             tickView.startTickAnim()

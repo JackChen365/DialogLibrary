@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activityContainer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Hello Crouton!"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorAccent"/>
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id:"/>
+
+    <RadioGroup
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Container"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FrameLayout"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MessageType:"/>
+
+
+    <RadioGroup
+        android:id="@+id/layout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/sameMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Same Message"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/diffMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diff Message"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Show"/>
+
+
+
+</LinearLayout>

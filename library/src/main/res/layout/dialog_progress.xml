@@ -3,30 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/toast_background"
+    android:background="?progressBackground"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp">
-
+    android:paddingLeft="?progressHorizontalPadding"
+    android:paddingRight="?progressHorizontalPadding"
+    android:paddingTop="?progressVerticalPadding"
+    android:paddingBottom="?progressVerticalPadding"
+    android:theme="?promptProgress">
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_width="?progressIndicatorWidth"
+        android:layout_height="?progressIndicatorWidth"
+        android:layout_marginRight="?progressIndicatorPadding"
         android:background="@null"
-        android:indeterminateTint="@android:color/white"/>
+        android:indeterminateTint="?progressIndeterminateTint"/>
 
     <TextView
-        android:id="@+id/progressMessage"
+        android:id="@+id/progressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:background="@null"
-        android:textSize="16sp" />
+        android:textColor="?progressTextColor"
+        android:textSize="?progressTextSize"
+        android:background="@null"/>
 
 
 </LinearLayout>

@@ -1,11 +1,11 @@
-package cz.dialogcompat.library.depend
+package cz.dialogcompat.library.popup
 
 import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.view.*
-import cz.dialogcompat.library.depend.transition.PopupTransition
-import cz.dialogcompat.library.depend.transition.TopPopupTransition
-import cz.dialogcompat.library.depend.widget.PopupLayout
+import cz.dialogcompat.library.popup.transition.PopupTransition
+import cz.dialogcompat.library.popup.transition.TopPopupTransition
+import cz.dialogcompat.library.popup.widget.PopupLayout
 
 /**
  * Created by cz on 2017/12/13.

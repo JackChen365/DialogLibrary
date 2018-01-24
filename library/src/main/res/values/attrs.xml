@@ -9,4 +9,48 @@
             <enum name="bottom" value="0x04"/>
         </attr>
     </declare-styleable>
+
+    <!--全局属性集引用-->
+    <attr name="prompt" format="reference"/>
+    <attr name="promptToast" format="reference"/>
+    <attr name="promptProgress" format="reference"/>
+    <attr name="promptCrouton" format="reference"/>
+    <attr name="promptSuccess" format="reference"/>
+
+    <!--toast使用属性-->
+    <attr name="toastHorizontalPadding" format="dimension"/>
+    <attr name="toastVerticalPadding" format="dimension"/>
+    <attr name="toastTextSize" format="dimension"/>
+    <attr name="toastTextColor" format="color"/>
+    <attr name="toastBackgroundResource" format="reference"/>
+
+    <!--crouton使用属性-->
+    <attr name="croutonPadding" format="dimension"/>
+    <attr name="croutonTextSize" format="dimension"/>
+    <attr name="croutonTextColor" format="color"/>
+    <attr name="croutonBackgroundColor" format="color"/>
+
+    <!--progress使用属性-->
+    <attr name="progressBackground" format="reference"/>
+    <attr name="progressHorizontalPadding" format="dimension"/>
+    <attr name="progressVerticalPadding" format="dimension"/>
+    <attr name="progressIndicatorWidth" format="dimension"/>
+    <attr name="progressIndicatorHeight" format="dimension"/>
+    <attr name="progressIndicatorPadding" format="dimension"/>
+    <attr name="progressIndeterminateTint" format="color"/>
+    <attr name="progressTextColor" format="color"/>
+    <attr name="progressTextSize" format="dimension"/>
+
+    <!--success属性-->
+    <attr name="successBackground" format="reference"/>
+    <attr name="successHorizontalPadding" format="dimension"/>
+    <attr name="successVerticalPadding" format="dimension"/>
+    <attr name="successTickWidth" format="dimension"/>
+    <attr name="successTickHeight" format="dimension"/>
+    <attr name="successTickPadding" format="dimension"/>
+    <attr name="successTickBackground" format="reference"/>
+
+    <attr name="successTextPadding" format="dimension"/>
+    <attr name="successTextColor" format="color"/>
+    <attr name="successTextSize" format="dimension"/>
 </resources>

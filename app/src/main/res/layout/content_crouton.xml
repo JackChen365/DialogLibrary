@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cz.dialogcompat.sample.progress.ProgressActivity"
-    tools:showIn="@layout/activity_progress">
+    tools:context="cz.dialogcompat.sample.crouton.CroutonActivity"
+    tools:showIn="@layout/activity_crouton">
 
 </android.support.constraint.ConstraintLayout>

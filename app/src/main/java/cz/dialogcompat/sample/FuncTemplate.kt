@@ -1,7 +1,12 @@
 package cz.dialogcompat.sample
 
 import android.app.Activity
+import cz.dialogcompat.sample.crouton.CroutonActivity
+import cz.dialogcompat.sample.crouton.CroutonFragmentActivity
+import cz.dialogcompat.sample.crouton.CroutonListViewActivity
 import cz.dialogcompat.sample.model.SampleItem
+import cz.dialogcompat.sample.popup.PopupPanelActivity
+import cz.dialogcompat.sample.progress.ProgressActivity
 
 /**
  * Created by Administrator on 2017/6/8.
@@ -48,7 +53,7 @@ class FuncTemplate {
                     id = 3
                     title = "加载弹出框"
                     desc = "测试让指定绘制片断翻转的动画"
-                    clazz=ProgressActivity::class.java
+                    clazz= ProgressActivity::class.java
                 }
                 item {
                     id = 4
@@ -60,7 +65,24 @@ class FuncTemplate {
                     id = 5
                     title = "Crouton弹出扩展"
                     desc = "测试让指定绘制片断翻转的动画"
-//                    clazz=FlipImgActivity::class.java
+                    item {
+                        pid = 5
+                        title = "Crouton常规演示"
+                        desc = "测试让指定绘制片断翻转的动画"
+                        clazz = CroutonActivity::class.java
+                    }
+                    item {
+                        pid = 5
+                        title = "Crouton常规演示"
+                        desc = "测试让指定绘制片断翻转的动画"
+                        clazz = CroutonListViewActivity::class.java
+                    }
+                    item {
+                        pid = 5
+                        title = "Crouton常规演示"
+                        desc = "测试让指定绘制片断翻转的动画"
+                        clazz = CroutonFragmentActivity::class.java
+                    }
                 }
             }
 

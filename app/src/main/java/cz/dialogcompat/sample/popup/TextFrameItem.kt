@@ -1,13 +1,13 @@
-package cz.dialogcompat.sample
+package cz.dialogcompat.sample.popup
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import cz.dialogcompat.library.depend.PopupFrame
-import cz.dialogcompat.library.depend.widget.PopupLayout
-import cz.widget.frame.FrameItem
+import cz.dialogcompat.library.popup.PopupFrame
+import cz.dialogcompat.library.popup.widget.PopupLayout
+import cz.dialogcompat.sample.R
 
 /**
  * Created by cz on 2018/1/22.

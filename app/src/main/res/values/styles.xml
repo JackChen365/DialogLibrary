@@ -11,6 +11,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="promptCrouton">@style/CroutonStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -35,5 +37,11 @@
         <item name="android:taskToFrontExitAnimation">@anim/base_stay_orig</item>
         <item name="android:taskToBackEnterAnimation">@anim/base_stay_orig</item>
         <item name="android:taskToBackExitAnimation">@anim/base_slide_right_out</item>
+    </style>
+    <style name="CroutonStyle">
+        <item name="croutonPadding">12dp</item>
+        <item name="croutonTextSize">16sp</item>
+        <item name="croutonTextColor">@color/lightWhite</item>
+        <item name="croutonBackgroundColor">@color/colorAccent</item>
     </style>
 </resources>

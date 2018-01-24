@@ -1,4 +1,4 @@
-package cz.dialogcompat.library.depend.transition
+package cz.dialogcompat.library.popup.transition
 
 import android.animation.Animator
 import android.view.View

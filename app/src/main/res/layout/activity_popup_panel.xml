@@ -58,7 +58,7 @@
         android:layout_height="0.8dp"
         android:background="@color/divider"/>
 
-    <cz.dialogcompat.library.depend.widget.PopupLayout
+    <cz.dialogcompat.library.popup.widget.PopupLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -131,6 +131,6 @@
                 android:text="Frame3"/>
         </FrameLayout>
 
-    </cz.dialogcompat.library.depend.widget.PopupLayout>
+    </cz.dialogcompat.library.popup.widget.PopupLayout>
 
 </LinearLayout>

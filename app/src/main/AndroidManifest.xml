@@ -17,13 +17,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProgressActivity"
+            android:name=".progress.ProgressActivity"
             android:label="@string/title_activity_progress"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".PopupPanelActivity"
+            android:name=".popup.PopupPanelActivity"
             android:label="@string/title_activity_popup_panel"
+            android:theme="@style/AppTheme" />
+
+
+        <!--Crouton-->
+        <activity
+            android:name=".crouton.CroutonActivity"
+            android:label="@string/title_activity_crouton"
             android:theme="@style/AppTheme"></activity>
+        <activity android:name=".crouton.CroutonListViewActivity"/>
+        <activity android:name=".crouton.CroutonFragmentActivity"/>
     </application>
 
 </manifest>

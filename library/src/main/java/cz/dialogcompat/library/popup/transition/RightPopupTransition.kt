@@ -1,9 +1,8 @@
-package cz.dialogcompat.library.depend.transition
+package cz.dialogcompat.library.popup.transition
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.view.View
-import android.view.animation.LinearInterpolator
 
 /**
  * Created by cz on 2017/12/13.

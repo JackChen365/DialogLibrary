@@ -1,12 +1,9 @@
-package cz.dialogcompat.sample
+package cz.dialogcompat.sample.popup
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.WindowManager
-import cz.dialogcompat.library.depend.PopupPanel
-import cz.dialogcompat.library.widget.WindowLayout
+import cz.dialogcompat.library.popup.PopupPanel
+import cz.dialogcompat.sample.R
 import cz.dialogcompat.sample.annotation.ToolBar
 import cz.volunteerunion.ui.ToolBarActivity
 import cz.widget.linearlayout.TabLinearLayout

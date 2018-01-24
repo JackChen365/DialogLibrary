@@ -2,4 +2,8 @@
     <string name="app_name">DialogCompat</string>
     <string name="title_activity_progress">ProgressActivity</string>
     <string name="title_activity_popup_panel">PopupPanelActivity</string>
+    <string name="title_activity_crouton">CroutonActivity</string>
+
+    <string name="refresh_complete">Refresh_complete!</string>
+    <string name="list_clicked">List Clicked!</string>
 </resources>
