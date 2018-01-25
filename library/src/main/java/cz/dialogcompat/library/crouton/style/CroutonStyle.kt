@@ -36,7 +36,7 @@ class CroutonStyle : Style() {
     }
 
     override fun getView(context: Context, parent: ViewGroup, item: CroutonItem): View {
-        val inflateView = LayoutInflater.from(context).inflate(R.layout.default_crouton_layout, parent, false)
+        val inflateView = LayoutInflater.from(context).inflate(R.layout.prompt_crouton_layout, parent, false)
         if (Crouton.NO_COLOR != item.backgroundColor) {
             inflateView.setBackgroundColor(item.backgroundColor)
         }

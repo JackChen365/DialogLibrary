@@ -20,10 +20,6 @@ class ProgressActivity : ToolBarActivity() {
         buttonShow.onClick {
             progressDialog.show(supportFragmentManager)
         }
-
-        buttonDismiss.onClick {
-            progressDialog.dismiss()
-        }
     }
 
 }

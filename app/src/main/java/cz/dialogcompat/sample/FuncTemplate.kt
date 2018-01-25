@@ -1,12 +1,14 @@
 package cz.dialogcompat.sample
 
 import android.app.Activity
+import cz.dialogcompat.sample.bottomdialog.BottomDialogActivity
 import cz.dialogcompat.sample.crouton.CroutonActivity
 import cz.dialogcompat.sample.crouton.CroutonFragmentActivity
 import cz.dialogcompat.sample.crouton.CroutonListViewActivity
 import cz.dialogcompat.sample.model.SampleItem
 import cz.dialogcompat.sample.popup.PopupPanelActivity
 import cz.dialogcompat.sample.progress.ProgressActivity
+import cz.dialogcompat.sample.toast.ToastActivity
 
 /**
  * Created by Administrator on 2017/6/8.
@@ -35,18 +37,17 @@ class FuncTemplate {
                     id = 1
                     title = "Toast定制"
                     desc = "一些自定制toast"
-//                    clazz=FlipImgActivity::class.java
+                    clazz= ToastActivity::class.java
                 }
                 item {
                     id = 2
                     title = "对话框"
                     desc = "一样定制的对话框"
-//                    clazz=FlipImgActivity::class.java
                     item {
                         pid = 2
                         title = "底部弹出框"
                         desc = "测试让指定绘制片断翻转的动画"
-//                    clazz=FlipImgActivity::class.java
+                        clazz= BottomDialogActivity::class.java
                     }
                 }
                 item {

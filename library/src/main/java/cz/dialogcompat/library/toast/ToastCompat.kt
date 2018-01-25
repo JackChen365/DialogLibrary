@@ -14,12 +14,10 @@ import cz.dialogcompat.library.widget.SuccessTickView
 /**
  * @author cz
  */
-class Toast {
+object ToastCompat {
+    val SHORT_DURATION_TIMEOUT: Long = 1000
+    val LONG_DURATION_TIMEOUT: Long = 5000
 
-    companion object {
-        internal val SHORT_DURATION_TIMEOUT: Long = 1000
-        internal val LONG_DURATION_TIMEOUT: Long = 5000
-    }
     private val handler: Handler = Handler(Looper.getMainLooper())
     private val toastValues = mutableListOf<String>()
 
@@ -94,13 +92,12 @@ class Toast {
      *
      * @param msg
      */
-    private fun showSuccessToast(context:Context,text: String) {
+    fun showSuccessToast(context:Context,text: String) {
         frequently(text) {
             val toast = android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
             val view = View.inflate(context, R.layout.prompt_success_item, null)
             val tickView = view.findViewById(R.id.successTick) as SuccessTickView
-            tickView.visibility = View.VISIBLE
             tickView.startTickAnim()
             val textView = view.findViewById(R.id.successText) as TextView
             textView.textSize = 13f

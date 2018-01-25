@@ -2,31 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="?successBackground"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="?successHorizontalPadding"
-    android:paddingRight="?successHorizontalPadding"
-    android:paddingBottom="?successVerticalPadding"
-    android:paddingTop="?successVerticalPadding" >
+    android:theme="?prompt"
+    style="?promptSuccessLayout">
 
 
     <cz.dialogcompat.library.widget.SuccessTickView
         android:id="@+id/successTick"
-        android:layout_width="?successTickWidth"
-        android:layout_height="?successTickHeight"
         android:layout_gravity="center_horizontal"
-        android:background="?successTickBackground"
-        android:padding="?successTickPadding" />
+        style="?promptSuccessTick"/>
 
     <TextView
         android:id="@+id/successText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="?successTextPadding"
         android:gravity="center"
-        android:textSize="?successTextSize"
-        android:textColor="?successTextColor" />
+        style="?promptSuccessText" />
 
 </LinearLayout>

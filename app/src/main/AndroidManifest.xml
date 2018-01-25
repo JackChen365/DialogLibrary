@@ -25,14 +25,18 @@
             android:label="@string/title_activity_popup_panel"
             android:theme="@style/AppTheme" />
 
-
-        <!--Crouton-->
+        <!-- Crouton -->
         <activity
             android:name=".crouton.CroutonActivity"
             android:label="@string/title_activity_crouton"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".crouton.CroutonListViewActivity"/>
-        <activity android:name=".crouton.CroutonFragmentActivity"/>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".crouton.CroutonListViewActivity" />
+        <activity android:name=".crouton.CroutonFragmentActivity" />
+        <activity
+            android:name=".toast.ToastActivity"
+            android:label="@string/title_activity_toast"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".bottomdialog.BottomDialogActivity"></activity>
     </application>
 
 </manifest>

@@ -6,4 +6,5 @@
 
     <string name="refresh_complete">Refresh_complete!</string>
     <string name="list_clicked">List Clicked!</string>
+    <string name="title_activity_toast">ToastActivity</string>
 </resources>

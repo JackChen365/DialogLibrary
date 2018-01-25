@@ -9,10 +9,16 @@
     tools:context="cz.dialogcompat.sample.progress.ProgressActivity">
 
     <Button
-        android:id="@+id/buttonShow"
+        android:id="@+id/buttonShow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show"/>
+        android:text="ShowDialog"/>
 
+    <Button
+        android:id="@+id/buttonShow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="ShowDialogFragment"/>
 
 </LinearLayout>

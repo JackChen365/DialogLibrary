@@ -14,54 +14,19 @@
     <attr name="prompt" format="reference"/>
 
     <declare-styleable name="Prompt">
+        <!--进度条布局-->
+        <attr name="promptProgressLayout" format="reference"/>
+        <attr name="promptProgressIndicator" format="reference"/>
+        <attr name="promptProgressText" format="reference"/>
+        <!--toast属性-->
         <attr name="promptToast" format="reference"/>
-        <attr name="promptProgress" format="reference"/>
+        <!--crouton属性-->
         <attr name="promptCrouton" format="reference"/>
-        <attr name="promptSuccess" format="reference"/>
+        <!--success属性-->
+        <attr name="promptSuccessLayout" format="reference"/>
+        <attr name="promptSuccessTick" format="reference"/>
+        <attr name="promptSuccessText" format="reference"/>
     </declare-styleable>
 
-    <!--toast使用属性-->
-    <declare-styleable name="promptToast">
-        <attr name="toastHorizontalPadding" format="dimension"/>
-        <attr name="toastVerticalPadding" format="dimension"/>
-        <attr name="toastTextSize" format="dimension"/>
-        <attr name="toastTextColor" format="color"/>
-        <attr name="toastBackgroundResource" format="reference"/>
-    </declare-styleable>
 
-    <!--crouton使用属性-->
-    <declare-styleable name="promptCrouton">
-        <attr name="croutonPadding" format="dimension"/>
-        <attr name="croutonTextSize" format="dimension"/>
-        <attr name="croutonTextColor" format="color"/>
-        <attr name="croutonBackgroundColor" format="color"/>
-    </declare-styleable>
-
-    <!--progress使用属性-->
-    <declare-styleable name="promptProgress">
-        <attr name="progressBackground" format="reference"/>
-        <attr name="progressHorizontalPadding" format="dimension"/>
-        <attr name="progressVerticalPadding" format="dimension"/>
-        <attr name="progressIndicatorWidth" format="dimension"/>
-        <attr name="progressIndicatorHeight" format="dimension"/>
-        <attr name="progressIndicatorPadding" format="dimension"/>
-        <attr name="progressIndeterminateTint" format="color"/>
-        <attr name="progressTextColor" format="color"/>
-        <attr name="progressTextSize" format="dimension"/>
-    </declare-styleable>
-
-    <!--success属性-->
-    <declare-styleable name="promptSuccess">
-        <attr name="successBackground" format="reference"/>
-        <attr name="successHorizontalPadding" format="dimension"/>
-        <attr name="successVerticalPadding" format="dimension"/>
-        <attr name="successTickWidth" format="dimension"/>
-        <attr name="successTickHeight" format="dimension"/>
-        <attr name="successTickPadding" format="dimension"/>
-        <attr name="successTickBackground" format="reference"/>
-
-        <attr name="successTextPadding" format="dimension"/>
-        <attr name="successTextColor" format="color"/>
-        <attr name="successTextSize" format="dimension"/>
-    </declare-styleable>
 </resources>

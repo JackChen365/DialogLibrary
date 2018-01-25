@@ -4,10 +4,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="?toastBackgroundResource"
-    android:paddingLeft="?toastHorizontalPadding"
-    android:paddingTop="?toastVerticalPadding"
-    android:paddingRight="?toastHorizontalPadding"
-    android:paddingBottom="?toastVerticalPadding"
-    android:textColor="?toastTextColor"
-    android:textSize="?toastTextSize" />
+    android:theme="?prompt"
+    style="?promptCrouton"/>
