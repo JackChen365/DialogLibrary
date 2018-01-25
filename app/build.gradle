@@ -39,3 +39,16 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+
+//让其build后,自动更新apk演示文件
+tasks.findByName("build").doLast{
+    def file=project.file("build/outputs/apk/app-debug.apk")
+    if(file.exists()){
+        copy {
+            from file.absolutePath
+            into "../apk/"
+            rename(file.name,"sample.apk")
+        }
+    }
+}
