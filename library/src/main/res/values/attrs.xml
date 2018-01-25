@@ -14,6 +14,7 @@
     <attr name="prompt" format="reference"/>
 
     <declare-styleable name="Prompt">
+        <attr name="promptToastBackground" format="reference"/>
         <!--进度条布局-->
         <attr name="promptProgressLayout" format="reference"/>
         <attr name="promptProgressIndicator" format="reference"/>

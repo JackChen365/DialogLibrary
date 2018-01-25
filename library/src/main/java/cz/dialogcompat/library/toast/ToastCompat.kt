@@ -100,7 +100,6 @@ object ToastCompat {
             val tickView = view.findViewById(R.id.successTick) as SuccessTickView
             tickView.startTickAnim()
             val textView = view.findViewById(R.id.successText) as TextView
-            textView.textSize = 13f
             textView.text = text
             toast.view = view
             toast.show()
