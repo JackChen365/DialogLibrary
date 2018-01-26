@@ -1,5 +1,12 @@
 # DialogLibrary
-> 一个android方面,常规的弹出类库,完成以下功能
+> *一个android方面,常规的弹出类库*
+#### Sample[下载](https://github.com/momodae/DialogLibrary/blob/master/apk/sample.apk?raw=true)
+
+#### Compile
+> compile 'com.cz.dialog-library:library:1.0.0'
+</br>
+
+#### 主要完成以下功能
 * 常规的Toast定制</br>
   ![](https://github.com/momodae/DialogLibrary/blob/master/image/image1.gif)
   </br>
@@ -17,11 +24,7 @@
   </br>
 
 
-#### Sample[下载](https://github.com/momodae/DialogLibrary/blob/master/apk/sample.apk?raw=true)
 
-#### Compile
-> compile 'com.cz.dialog-library:library:1.0.0'
-</br>
 
 #### Style配置,在此基础上,可对所有功能进行单独定制,具体定制可参考Sample
 ```
