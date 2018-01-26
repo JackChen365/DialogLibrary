@@ -2,12 +2,12 @@
 <resources>
 
     <style name="ProgressDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowFrame">@drawable/toast_background</item>
+        <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@drawable/toast_background</item>
-        <item name="android:windowBackground">@drawable/toast_background</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
@@ -25,48 +25,46 @@
     </style>
 
 
-
     <!--以下为所有布局配置-->
     <style name="PromptStyle">
         <!--加载进度弹窗-->
-        <item name="promptProgressLayout">@style/ProgressLayoutStyle</item>
-        <item name="promptProgressIndicator">@style/ProgressIndicator</item>
-        <item name="promptProgressText">@style/PromptText</item>
-        <item name="promptToastBackground">@color/alpha_black</item>
+        <item name="promptProgressLayout">@style/_ProgressLayoutStyle</item>
+        <item name="promptProgressIndicator">@style/_ProgressIndicator</item>
+        <item name="promptProgressText">@style/_PromptText</item>
         <!--定制toast-->
-        <item name="promptToast">@style/PromptToast</item>
+        <item name="promptToast">@style/_PromptToast</item>
+        <item name="promptToastGravity">@style/_PromptToastGravity</item>
         <!--刷新类消息层-->
-        <item name="promptCrouton">@style/PromptCrouton</item>
-
+        <item name="promptCrouton">@style/_PromptCrouton</item>
         <!--成功弹窗-->
-        <item name="promptSuccessLayout">@style/PromptSuccessLayout</item>
-        <item name="promptSuccessTick">@style/PromptSuccessTick</item>
-        <item name="promptSuccessText">@style/PromptSuccessText</item>
+        <item name="promptSuccessLayout">@style/_PromptSuccessLayout</item>
+        <item name="promptSuccessTick">@style/_PromptSuccessTick</item>
+        <item name="promptSuccessText">@style/_PromptSuccessText</item>
     </style>
 
-    <style name="LayoutPadding">
+    <style name="_LayoutPadding">
         <item name="android:paddingLeft">24dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingRight">24dp</item>
         <item name="android:paddingBottom">16dp</item>
     </style>
 
-    <style name="ProgressLayoutStyle" parent="LayoutPadding">
-        <item name="android:background">@drawable/toast_background</item>
+    <style name="_ProgressLayoutStyle" parent="_LayoutPadding">
+        <item name="android:background">@drawable/prompt_toast_background</item>
     </style>
 
-    <style name="ProgressIndicator">
-        <item name="android:layout_width">36dp</item>
-        <item name="android:layout_height">36dp</item>
+    <style name="_ProgressIndicator">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
         <item name="android:layout_marginRight">12dp</item>
     </style>
 
-    <style name="PromptText">
+    <style name="_PromptText">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="PromptCrouton" parent="LayoutPadding">
+    <style name="_PromptCrouton" parent="_LayoutPadding">
         <item name="android:background">?colorAccent</item>
         <item name="android:paddingLeft">12dp</item>
         <item name="android:paddingTop">8dp</item>
@@ -77,31 +75,41 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="PromptToast" parent="LayoutPadding">
-        <item name="android:background">@drawable/toast_background</item>
-        <item name="android:textColor">?colorAccent</item>
-        <item name="android:textSize">16sp</item>
+    <style name="_PromptToast">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@drawable/prompt_toast_background</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="PromptSuccessLayout" >
-        <item name="android:background">@drawable/toast_background</item>
+    <style name="_PromptSuccessLayout" >
+        <item name="android:background">@drawable/prompt_toast_background</item>
         <item name="android:paddingLeft">32dp</item>
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingRight">32dp</item>
         <item name="android:paddingBottom">12dp</item>
     </style>
 
-    <style name="PromptSuccessTick" parent="LayoutPadding">
+    <style name="_PromptSuccessTick" parent="_LayoutPadding">
         <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:padding">6dp</item>
-        <item name="android:background">@drawable/success_circle</item>
+        <item name="android:background">@drawable/prompt_success_circle</item>
     </style>
 
-    <style name="PromptSuccessText" >
+    <style name="_PromptSuccessText" >
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="_PromptToastGravity">
+        <item name="toastGravity">center</item>
+        <item name="toastXOffset">0dp</item>
+        <item name="toastYOffset">0dp</item>
     </style>
 
 </resources>

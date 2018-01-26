@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.WindowManager
 import android.widget.TextView
+import cz.dialogcompat.library.successToast
 import cz.dialogcompat.library.toast
 import cz.dialogcompat.library.toast.ToastCompat
 import cz.dialogcompat.sample.R
@@ -46,9 +47,7 @@ class ToastActivity : ToolBarActivity() {
 //            windowManager.addView(toastView,params)
         }
 
-        buttonSuccess.setOnClickListener {
-            ToastCompat.showSuccessToast(this,"成功!")
-        }
+        buttonSuccess.setOnClickListener { successToast("成功!") }
     }
 
 }

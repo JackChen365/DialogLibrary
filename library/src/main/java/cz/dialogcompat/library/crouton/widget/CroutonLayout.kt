@@ -86,7 +86,7 @@ class CroutonLayout : ViewGroup {
         }
     }
 
-    fun addCroutonItem(item: CroutonItem?) {
+    fun addCroutonItem(item: CroutonItem) {
         if (displayItems.isEmpty()) {
             //开始展示
             if (null != item) {
@@ -96,7 +96,7 @@ class CroutonLayout : ViewGroup {
         } else {
             //取出展示列中,最后一个与当前想添加的比较样式,如果不相同,则直接展示
             val croutonItem = displayItems.peekLast()
-            if (item!!.filter && !displayItems.contains(item)) {
+            if (item.filter && !displayItems.contains(item)) {
                 croutonItems.offerLast(item)
                 if (croutonItem.style !== item.style) {
                     val pollItem = croutonItems.pollLast()

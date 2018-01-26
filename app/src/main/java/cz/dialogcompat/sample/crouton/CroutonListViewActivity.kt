@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import cz.dialogcompat.library.crouton
 
 import cz.dialogcompat.library.crouton.Crouton
 import cz.dialogcompat.sample.R
@@ -26,7 +27,8 @@ class CroutonListViewActivity : ToolBarActivity() {
             items[i] = "Item:" + (i + 1)
         }
         listView.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items)
-        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, _, _ ->
-            Crouton.create(this@CroutonListViewActivity, R.id.list_view).text(R.string.list_clicked).show() }
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, v, _, _ ->
+            parent.crouton { text = getString(R.string.list_clicked) }
+        }
     }
 }

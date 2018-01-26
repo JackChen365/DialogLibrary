@@ -14,19 +14,32 @@
     <attr name="prompt" format="reference"/>
 
     <declare-styleable name="Prompt">
-        <attr name="promptToastBackground" format="reference"/>
         <!--进度条布局-->
         <attr name="promptProgressLayout" format="reference"/>
         <attr name="promptProgressIndicator" format="reference"/>
         <attr name="promptProgressText" format="reference"/>
         <!--toast属性-->
         <attr name="promptToast" format="reference"/>
+        <attr name="promptToastGravity" format="reference"/>
         <!--crouton属性-->
         <attr name="promptCrouton" format="reference"/>
         <!--success属性-->
         <attr name="promptSuccessLayout" format="reference"/>
         <attr name="promptSuccessTick" format="reference"/>
         <attr name="promptSuccessText" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="ToastGravity">
+        <attr name="toastGravity" format="enum">
+            <!--Gravity.TOP-->
+            <enum name="top" value="0x30"/>
+            <!--Gravity.BOTTOM-->
+            <enum name="bottom" value="0x50"/>
+            <!--Gravity.CENTER-->
+            <enum name="center" value="0x11"/>
+        </attr>
+        <attr name="toastXOffset" format="dimension"/>
+        <attr name="toastYOffset" format="dimension"/>
     </declare-styleable>
 
 

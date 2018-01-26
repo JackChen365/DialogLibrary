@@ -3,6 +3,7 @@ package cz.dialogcompat.sample.crouton
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.RadioGroup
+import cz.dialogcompat.library.crouton
 import cz.dialogcompat.library.crouton.Crouton
 import cz.dialogcompat.sample.R
 import cz.dialogcompat.sample.annotation.ToolBar
@@ -39,11 +40,12 @@ class CroutonActivity : ToolBarActivity() {
                 message = getString(R.string.refresh_complete) + count++
             }
             show = !show
-            Crouton.create(this, id)//确定装载activity-以及参照控件
-                    .filter(true)//是否过滤重复样式的重复弹出,默认不过滤
-                    .backgroundColor(if (show) Color.RED else Crouton.NO_COLOR)
-                    .text(message!!)//展示信息
-                    .show()
+            crouton(id){ text=message }
+//            Crouton.create(this, id)//确定装载activity-以及参照控件
+//                    .filter(true)//是否过滤重复样式的重复弹出,默认不过滤
+//                    .backgroundColor(if (show) Color.RED else Crouton.NO_COLOR)
+//                    .text(message!!)//展示信息
+//                    .show()
         }
     }
 

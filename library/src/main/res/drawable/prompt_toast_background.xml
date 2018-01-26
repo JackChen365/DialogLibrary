@@ -3,6 +3,6 @@
 
     <corners android:radius="3dp" />
 
-    <solid android:color="?promptToastBackground" />
+    <solid android:color="@color/alpha_black" />
 
 </shape>

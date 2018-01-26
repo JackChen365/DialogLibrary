@@ -4,11 +4,13 @@ import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.support.annotation.StringRes
+import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import cz.dialogcompat.library.R
+import cz.dialogcompat.library.checkPromptTheme
 import cz.dialogcompat.library.widget.SuccessTickView
 
 /**
@@ -27,6 +29,8 @@ object ToastCompat {
 
     fun toast(context:Context,text: String) {
         frequently(text){
+            //检测样式是否配置
+            context.checkPromptTheme()
             if (Looper.getMainLooper() == Looper.myLooper()) {
                 android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT).show()
             } else {
@@ -63,15 +67,34 @@ object ToastCompat {
      * @param text
      * @param duration  @see #LENGTH_SHORT @see #LENGTH_LONG
      */
-    fun customToast(context:Context,text: String, duration: Int = android.widget.Toast.LENGTH_SHORT) {
+    fun customToast(context:Context,text: String,
+                    duration: Int = android.widget.Toast.LENGTH_SHORT) {
         frequently(text){
+            //检测样式是否配置
+            var context=context
+            context.checkPromptTheme()
             val layoutInflate = LayoutInflater.from(context)
             val toastView = layoutInflate.inflate(R.layout.prompt_toast_custom, null)
             val localTextView = toastView.findViewById(R.id.toastContent) as TextView
             localTextView.text = text
             val toast = android.widget.Toast(context)
             toast.duration = duration
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+            //设置方向
+            val ta = context.obtainStyledAttributes(null, intArrayOf(R.attr.prompt))
+            val themeResId = ta.getResourceId(0, 0)
+            if (themeResId != 0) {
+                //使用引用的theme更改上下文,使R.attr.promptToastGravity的索引目录变为prompt对应的style目录下
+                context=ContextThemeWrapper(context, themeResId)
+            }
+            ta.recycle()
+            //设置toast出现位置
+            context.obtainStyledAttributes(null,R.styleable.ToastGravity,R.attr.promptToastGravity,R.style._PromptToastGravity).apply {
+                val gravity=getInt(R.styleable.ToastGravity_toastGravity,Gravity.CENTER)
+                val xOffset=getDimension(R.styleable.ToastGravity_toastXOffset,0f).toInt()
+                val yOffset=getDimension(R.styleable.ToastGravity_toastYOffset,0f).toInt()
+                toast.setGravity(gravity,xOffset,yOffset)
+                recycle()
+            }
             toast.view = toastView
             toast.show()
         }
@@ -83,8 +106,8 @@ object ToastCompat {
      *
      * @param res
      */
-    fun showSuccessToast(context:Context,@StringRes res: Int) {
-        showSuccessToast(context,context.getString(res))
+    fun successToast(context:Context,@StringRes res: Int) {
+        successToast(context,context.getString(res))
     }
 
     /**
@@ -92,8 +115,10 @@ object ToastCompat {
      *
      * @param msg
      */
-    fun showSuccessToast(context:Context,text: String) {
+    fun successToast(context:Context,text: String) {
         frequently(text) {
+            //检测样式是否配置
+            context.checkPromptTheme()
             val toast = android.widget.Toast.makeText(context, text, android.widget.Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.CENTER, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
             val view = View.inflate(context, R.layout.prompt_success_item, null)

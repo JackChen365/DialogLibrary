@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 
 import cz.dialogcompat.library.R
+import cz.dialogcompat.library.checkPromptTheme
 import cz.dialogcompat.library.crouton.callback.LifeCycleCallback
 import cz.dialogcompat.library.crouton.model.CroutonItem
 import cz.dialogcompat.library.crouton.style.CroutonStyle
@@ -22,7 +23,7 @@ import cz.dialogcompat.library.crouton.widget.CroutonLayout
 /**
  * Created by cz on 11/21/16.
  */
-class Crouton private constructor(private val context: Context?, decorView: View?, dependView: View?, private val croutonView: View?, private val viewId: Int) {
+class Crouton private constructor(private val context: Context?, decorView: View?, dependView: View?, private val croutonView: View?, private val viewId: Int, croutonItem:CroutonItem?=null) {
     private val item: CroutonItem
     private var decorLayout: ViewGroup? = null
 
@@ -33,10 +34,15 @@ class Crouton private constructor(private val context: Context?, decorView: View
         if (null != dependView) {
             dependToView(dependView)
         }
-        this.item = CroutonItem()
-        //默认顶部弹出,时间2秒
-        this.item.duration = SHORT_TIME
-        this.item.style = croutonStyle
+        //如果外围传入不为空,则代表己初始化,不用默认
+        if(null!= croutonItem){
+            this.item= croutonItem
+        } else {
+            this.item = CroutonItem()
+            //默认顶部弹出,时间2秒
+            this.item.duration = SHORT_TIME
+            this.item.style = croutonStyle
+        }
     }
 
     private fun getCroutonLayout(): CroutonLayout?{
@@ -121,6 +127,8 @@ class Crouton private constructor(private val context: Context?, decorView: View
         val decorLayout=decorLayout
         if (null != decorLayout) {
             val context = decorLayout.context
+            //检测样式是否配置
+            context.checkPromptTheme()
             var croutonLayout = getCroutonLayout()
             if (null == croutonLayout) {
                 croutonLayout = CroutonLayout(context)
@@ -161,17 +169,17 @@ class Crouton private constructor(private val context: Context?, decorView: View
 
         val croutonStyle: Style=CroutonStyle()
 
-        fun create(activity: Activity?, @IdRes id: Int): Crouton {
+        fun create(activity: Activity?, @IdRes id: Int, croutonItem:CroutonItem?=null): Crouton {
             var context: Context? = null
             var decorView: View? = null
             if (null != activity) {
                 context = activity.applicationContext
                 decorView = activity.window.decorView
             }
-            return Crouton(context, decorView, null, null, id)
+            return Crouton(context, decorView, null, null, id,croutonItem)
         }
 
-        fun create(fragment: Fragment?, @IdRes id: Int): Crouton {
+        fun create(fragment: Fragment?, @IdRes id: Int, croutonItem:CroutonItem?=null): Crouton {
             var decorView: View? = null
             var dependView: View? = null
             var context: Context? = null
@@ -181,10 +189,10 @@ class Crouton private constructor(private val context: Context?, decorView: View
                 decorView = activity.window.decorView
                 dependView = fragment.view
             }
-            return Crouton(context, decorView, dependView, null, id)
+            return Crouton(context, decorView, dependView, null, id,croutonItem)
         }
 
-        fun create(fragment: Fragment, view: View?): Crouton {
+        fun create(fragment: Fragment, view: View?, croutonItem:CroutonItem?=null): Crouton {
             var decorView: View? = null
             var dependView: View? = null
             var context: Context? = null
@@ -193,17 +201,17 @@ class Crouton private constructor(private val context: Context?, decorView: View
                 dependView = fragment.view
                 decorView = view.rootView
             }
-            return Crouton(context, decorView, dependView, view, View.NO_ID)
+            return Crouton(context, decorView, dependView, view, View.NO_ID,croutonItem)
         }
 
-        fun create(view: View?): Crouton {
+        fun create(view: View?, croutonItem:CroutonItem?=null): Crouton {
             var decorView: View? = null
             var context: Context? = null
             if (null != view) {
                 context = view.context
                 decorView = view.rootView
             }
-            return Crouton(context, decorView, null, view, View.NO_ID)
+            return Crouton(context, decorView, null, view, View.NO_ID,croutonItem)
         }
 
         /**

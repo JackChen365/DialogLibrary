@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cz.dialogcompat.library.crouton
 
 import cz.dialogcompat.library.crouton.Crouton
 import cz.dialogcompat.sample.R
@@ -21,7 +22,7 @@ class Sample1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById(R.id.btn_show).setOnClickListener {
-            Crouton.create(this@Sample1Fragment, R.id.tv_text).text(R.string.refresh_complete).show()
+            crouton(R.id.tv_text) { text=getString(R.string.refresh_complete) }
         }
     }
 }

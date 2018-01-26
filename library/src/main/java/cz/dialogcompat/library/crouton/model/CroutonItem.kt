@@ -14,25 +14,27 @@ import cz.dialogcompat.library.crouton.style.Style
 
 class CroutonItem {
     //显示样式
-    var style: Style = CroutonStyle()
+    var style: Style = Crouton.croutonStyle
     //停留时间
-    var duration: Int = 0
+    var duration: Int = Crouton.SHORT_TIME
     //过滤掉相同文字,相同style
-    var filter: Boolean = false
+    var filter: Boolean = true
     //提示文字
     var text: String? = null
     var backgroundColor: Int = 0
-    //按钮提示文字
-    var actionText: String? = null
-    //当前展示控件矩阵
-    var outRect=Rect()
-    //映射控件矩阵(可以理解为父控件
-    var parentRect=Rect()
     //生命周期回调事件
-    var callback: LifeCycleCallback? = null
+    internal var callback: LifeCycleCallback? = null
+    //当前展示控件矩阵
+    internal var outRect=Rect()
+    //映射控件矩阵(可以理解为父控件
+    internal var parentRect=Rect()
 
     init {
         backgroundColor = Crouton.NO_COLOR
+    }
+
+    fun setLifeCycleCallback(callback:LifeCycleCallback){
+        this.callback=callback
     }
 
     override fun equals(o: Any?): Boolean {

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.PopupWindow
@@ -40,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager= LinearLayoutManager(this)
         val items = FuncTemplate[id]
         items?.let { recyclerView.adapter=Adapter(it) }
-
         PopupWindow()
     }
 

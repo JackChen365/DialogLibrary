@@ -14,6 +14,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 
 import cz.dialogcompat.library.R
+import cz.dialogcompat.library.checkPromptTheme
 
 /**
  * Created by cz on 17/12/13.
@@ -37,6 +38,8 @@ class ProgressDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //检测样式是否配置
+        context.checkPromptTheme()
         title = arguments?.getString("title")
     }
 
@@ -46,10 +49,6 @@ class ProgressDialogFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val progressBar = view.findViewById(R.id.progressBar) as ProgressBar
-//            progressBar.indeterminateDrawable.setColorFilter(Res.getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN)
-        }
         titleView = view.findViewById(R.id.progressText) as TextView
         titleView?.text = title
     }

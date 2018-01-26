@@ -11,7 +11,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="prompt">@style/PromptStyle</item>
+        <!--以下为覆盖默认样式,若使用默认样式,可不写-->
+        <!--<item name="prompt">@style/MyPromptStyle</item>-->
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -39,5 +40,90 @@
     </style>
 
 
+    <!--以为为style覆盖样式-->
+    <!--<style name="MyPromptStyle" parent="PromptStyle">-->
 
+    <!--以下为完全重写-->
+    <style name="MyPromptStyle">
+        <!--加载进度弹窗-->
+        <item name="promptProgressLayout">@style/ProgressLayoutStyle</item>
+        <item name="promptProgressIndicator">@style/ProgressIndicator</item>
+        <item name="promptProgressText">@style/PromptText</item>
+        <!--定制toast-->
+        <item name="promptToast">@style/PromptToast</item>
+        <!--自定义toast弹出方向-->
+        <item name="promptToastGravity">@style/PromptToastGravity</item>
+        <!--刷新类消息层-->
+        <item name="promptCrouton">@style/PromptCrouton</item>
+        <!--成功弹窗-->
+        <item name="promptSuccessLayout">@style/PromptSuccessLayout</item>
+        <item name="promptSuccessTick">@style/PromptSuccessTick</item>
+        <item name="promptSuccessText">@style/PromptSuccessText</item>
+    </style>
+
+    <style name="LayoutPadding">
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="ProgressLayoutStyle" parent="LayoutPadding">
+        <item name="android:background">@drawable/prompt_toast_background</item>
+    </style>
+
+    <style name="ProgressIndicator">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+    </style>
+
+    <style name="PromptText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PromptCrouton" parent="LayoutPadding">
+        <item name="android:background">?colorAccent</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PromptToast" parent="LayoutPadding">
+        <item name="android:background">@drawable/prompt_toast_background</item>
+        <item name="android:textColor">?colorAccent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PromptToastGravity">
+        <item name="toastGravity">bottom</item>
+        <item name="toastXOffset">0dp</item>
+        <item name="toastYOffset">100dp</item>
+    </style>
+
+    <style name="PromptSuccessLayout" >
+        <item name="android:background">@drawable/prompt_toast_background</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingRight">32dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="PromptSuccessTick" parent="LayoutPadding">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:background">@drawable/prompt_success_circle</item>
+    </style>
+
+    <style name="PromptSuccessText" >
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

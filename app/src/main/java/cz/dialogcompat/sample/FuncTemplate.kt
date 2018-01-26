@@ -68,20 +68,20 @@ class FuncTemplate {
                     desc = "测试让指定绘制片断翻转的动画"
                     item {
                         pid = 5
-                        title = "Crouton常规演示"
-                        desc = "测试让指定绘制片断翻转的动画"
+                        title = "Crouton常规演示1"
+                        desc = "测试常规功能"
                         clazz = CroutonActivity::class.java
                     }
                     item {
                         pid = 5
-                        title = "Crouton常规演示"
-                        desc = "测试让指定绘制片断翻转的动画"
+                        title = "Crouton常规演示2"
+                        desc = "测试列表点击弹出"
                         clazz = CroutonListViewActivity::class.java
                     }
                     item {
                         pid = 5
-                        title = "Crouton常规演示"
-                        desc = "测试让指定绘制片断翻转的动画"
+                        title = "Crouton常规演示3"
+                        desc = "测试Fragment切换时,Crouton依赖情况"
                         clazz = CroutonFragmentActivity::class.java
                     }
                 }
